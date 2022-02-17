@@ -734,6 +734,7 @@ EOD;
 						$item['author'] = htmlspecialchars_decode($author, ENT_QUOTES);
 						$item['timestamp'] = $date;
 						// Fallback for UID in AtomFormat.php is sha1 of title and content. FB content seems to change each update.
+						// 'urn:sha1:' is always prepended.
 						$item['uid'] = md5($item['title'] . $item['timestamp']);
 
 						if(strpos($item['content'], '<img') === false) {
